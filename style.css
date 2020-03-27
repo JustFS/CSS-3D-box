@@ -1,3 +1,54 @@
+:root{
+  --size:300px;
+  --color: rgba(202, 88, 88, 0.692);
+}
+.cube{
+  width:var(--size);
+  height:var(--size);
+  perspective:200;
+  perspective-origin: 50% -50%;
+  transform-style: preserve-3d;
 
+  animation: spin 80s infinite linear;
+}
+.side{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  width:var(--size);
+  height:var(--size);
+  background-image: radial-gradient(rgba(0,0,0,0),rgba(0,0,0,0),var(--color));
+  font-size:calc(var(--size) / 4);
+}
+#front{
+	transform:translateZ(calc( var(--size) / 2) );  
+}
+#top{
+  transform: rotateX(-270deg) translateY(calc(-1 * ( var(--size) / 2 ) ) );
+	transform-origin: top center;
+}
+#bottom{
+	transform: rotateX(270deg) translateY(calc( var(--size) / 2) );
+	transform-origin: bottom center;    
+}
+#right{
+	transform: rotateY(-270deg) translateX(calc( var(--size) / 2) );
+	transform-origin: top right;
+}
+#left{
+	transform: rotateY(270deg) translateX(calc(-1 * ( var(--size) / 2 ) ));
+	transform-origin: center left;  
+}
+#back{
+	transform: rotateY(-180deg) translateZ(calc(( var(--size) / 2 ) ));
+}
 
-/*# sourceMappingURL=style.css.map */
+@keyframes spin {
+	from {
+    transform: rotateY(0) rotateZ(0) rotateX(0);  
+  }
+	to {
+    transform: rotateY(360deg) rotateZ(360deg) rotateX(360deg);
+  }
+}
