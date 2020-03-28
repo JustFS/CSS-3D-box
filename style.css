@@ -18,7 +18,7 @@
   position:absolute;
   width:var(--size);
   height:var(--size);
-  background-image: radial-gradient(rgba(0,0,0,0),rgba(0,0,0,0),var(--color));
+  background: var(--color);
   font-size:calc(var(--size) / 4);
 }
 #front{
