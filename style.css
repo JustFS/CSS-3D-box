@@ -1,47 +1,50 @@
-:root{
-  --size:300px;
-  --color: rgba(202, 88, 88, 0.692);
+:root {
+  --size: 300px;
+}
+body {
+  background: rgba(1, 255, 255, 0.294);
 }
 .cube{
+  margin: 12rem auto 0;
   width:var(--size);
   height:var(--size);
-  perspective:200;
-  perspective-origin: 50% -50%;
   transform-style: preserve-3d;
-
-  animation: spin 80s infinite linear;
+  /* transform: rotateY(30deg) rotateZ(30deg) rotateX(0deg); */
+  animation: spin 20s infinite linear;
 }
 .side{
-  display:flex;
-  justify-content:center;
-  align-items:center;
   position:absolute;
+  opacity: 0.85;
   width:var(--size);
-  height:var(--size);
-  background: var(--color);
-  font-size:calc(var(--size) / 4);
+  height:var(--size);;
 }
 #front{
-	transform:translateZ(calc( var(--size) / 2) );  
+  background: url(./media/basic-pics/1.jpg) no-repeat center/cover;
+  transform: translateZ(calc(var(--size) / 2)); 
 }
 #top{
+  background: url(./media/basic-pics/2.jpg) no-repeat center/cover;
   transform: rotateX(-270deg) translateY(calc(-1 * ( var(--size) / 2 ) ) );
-	transform-origin: top center;
+  transform-origin: top center;
 }
 #bottom{
-	transform: rotateX(270deg) translateY(calc( var(--size) / 2) );
-	transform-origin: bottom center;    
+  background: url(./media/basic-pics/3.jpg) no-repeat center/cover;  
+  transform: rotateX(270deg) translateY(calc( var(--size) / 2) );
+  transform-origin: bottom center; 
 }
 #right{
-	transform: rotateY(-270deg) translateX(calc( var(--size) / 2) );
-	transform-origin: top right;
+  background: url(./media/basic-pics/4.jpg) no-repeat center/cover;
+  transform: rotateY(-270deg) translateX(calc( var(--size) / 2) );
+  transform-origin: top right;
 }
 #left{
-	transform: rotateY(270deg) translateX(calc(-1 * ( var(--size) / 2 ) ));
-	transform-origin: center left;  
+  background: url(./media/basic-pics/5.jpg) no-repeat center/cover;
+  transform: rotateY(270deg) translateX(calc(-1 * ( var(--size) / 2 ) ));
+  transform-origin: center left;
 }
 #back{
-	transform: rotateY(-180deg) translateZ(calc(( var(--size) / 2 ) ));
+  background: url(./media/basic-pics/8.jpg) no-repeat center/cover;
+  transform: rotateY(-180deg) translateZ(calc(( var(--size) / 2 ) ));
 }
 
 @keyframes spin {
